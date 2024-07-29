@@ -20,7 +20,7 @@ body {
 
 }
 
-/* nav bar */
+/** ----- Nav Bar ----- */
 .nav-container {
     display: flex;
     align-items: center;
@@ -29,6 +29,8 @@ body {
     background-color: black;
     width: 100%;
     font-size: 1.3em;
+    z-index: 10;
+
 }
 
 .nav-container img {
@@ -52,6 +54,7 @@ body {
     transition: color 0.3s ease;
 }
 
+
 .nav-options li {
     padding: 10px;
     list-style: none;
@@ -68,7 +71,6 @@ body {
     cursor: pointer;
     border-radius: 2px;
     font-family: 'Chinese Rocks Rg', sans-serif;
-    /* Mejora: Asegurar que la fuente se aplique a los botones */
 }
 
 .nav-container button:hover {
@@ -87,7 +89,7 @@ body {
     display: none;
     position: absolute;
     background-color: black;
-    z-index: 2;
+    z-index: 1;
     margin-top: 10px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
     width: 100%;
@@ -103,8 +105,15 @@ body {
     display: block;
 }
 
-/* banner */
+/** ----- Banner ----- */
 .banner-container {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%), url('../images/arthur-banner.jpg');
+    background-size: cover;
+    background-position: top;
+}
+
+
+.banner-content {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -113,27 +122,17 @@ body {
     align-items: center;
     gap: 20px;
     padding: 50px;
-}
-
-.banner-container::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) 100%), url('../images/arthur-banner.jpg');
-    z-index: -1;
-    background-size: cover;
-    background-position: top;
-    filter: blur(3px) brightness(0.5);
+    backdrop-filter: blur(1px) brightness(0.5);;
 }
 
 
-.banner-container h1 {
+.banner-content h1 {
     font-size: 10vw;
     text-shadow: 5px 4px 1px black;
     text-align: center;
 }
 
-.banner-container p {
+.banner-content p {
     font-size: 1.5em;
     text-shadow: 2px 2px 1px black;
     max-width: 700px;
@@ -142,7 +141,7 @@ body {
 }
 
 
-/* Image Gallery */
+/** ----- Image Gallery ----- */
 .image-gallery {
     position: relative;
     display: flex;
@@ -170,7 +169,7 @@ body {
 
 @media (max-width: 700px) {
 
-    .banner-container::before {
+    .banner-container {
         background-size: contain;
         background-repeat: no-repeat;
 
@@ -186,7 +185,7 @@ body {
     }
 
 
-    /* Image Gallery */
+    /** ----- Image Gallery ----- */
     .image-gallery {
         flex-direction: column;
         overflow: hidden;
