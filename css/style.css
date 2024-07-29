@@ -16,8 +16,6 @@ body {
     background-color: black;
     color: white;
     font-optical-sizing: auto;
-
-
 }
 
 /** ----- Nav Bar ----- */
@@ -116,7 +114,6 @@ body {
 .banner-content {
     display: flex;
     flex-direction: column;
-    position: relative;
     width: 100%;
     z-index: 1;
     align-items: center;
@@ -142,7 +139,15 @@ body {
 
 
 /** ----- Image Gallery ----- */
+.gallery-container{
+    display: flex;
+
+}
+
+
+
 .image-gallery {
+    margin: auto;
     position: relative;
     display: flex;
     width: 90%;
